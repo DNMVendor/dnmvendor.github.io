@@ -10,15 +10,16 @@
 		<!-- *****LOAD CSS, SCRIPTS & FONTS***** -->
 		<TITLE>DNM VENDOR</TITLE>
 	</HEAD>
-	<BODY onLoad="FillDivs()">
+	<BODY>
 		<div id="MainWrapper">
 			<div id="DateTimeBTCWrapper">
 				<div id="DateTimeWrapper">
 					<script>
+					$(
 					window.onload = function() {
 						$('#DateTimeText span').html(DayNum);
 						$('#DateTimeText span2').html(funds);
-					}
+					})
 					</script>
 					<div id="DateTimeText">Day: <span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cash: <span2></span2></div>
 				</div>
