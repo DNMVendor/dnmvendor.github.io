@@ -1,0 +1,108 @@
+<HTML>
+	<HEAD>
+		<!-- *****LOAD CSS, SCRIPTS & FONTS***** -->
+		<link href="CSS/style.css" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:600' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Wendy+One' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="JS/Init_Script.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<!-- *****LOAD CSS, SCRIPTS & FONTS***** -->
+		<TITLE>DNM VENDOR</TITLE>
+	</HEAD>
+	<BODY onLoad="FillDivs()">
+		<div id="MainWrapper">
+			<div id="DateTimeBTCWrapper">
+				<div id="DateTimeWrapper">
+					<script>
+					window.onload = function() {
+						$('#DateTimeText span').html(DayNum);
+						$('#DateTimeText span2').html(funds);
+					}
+					</script>
+					<div id="DateTimeText">Day: <span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cash: <span2></span2></div>
+				</div>
+				<div id="BTCWrapper">
+					<script>
+						window.onload = function() {
+						$('#BTCText span').html(BTC_VAL);
+						}
+					</script>
+					<div id="BTCText" >1BTC = $<span></span></div>
+				</div>
+			</div>
+			<div id="EventsTicker">
+			</div>
+			<div id="TabArea">
+				<div class="tabs">
+					<div class="tab">
+						<input type="radio" id="tab-1" name="tab-group-2" checked>
+						<label for="tab-1">BUY</label>
+						<div class="content">
+							<p>Buy Tab</p>
+						</div> 
+					</div>
+					<div class="tab">
+						<input type="radio" id="tab-2" name="tab-group-2">
+						<label for="tab-2">SELL</label>
+						<div class="content">
+							<p>Sell Tab</p>
+						</div> 
+					</div>
+					<div class="tab">
+						<input type="radio" id="tab-3" name="tab-group-2">
+						<label for="tab-3">SHOP</label>
+						<div class="content">
+							<p>Shop Tab</p>
+						</div> 
+					</div>
+					<div class="tab">
+						<input type="radio" id="tab-4" name="tab-group-2">
+						<label for="tab-4">CREW</label>
+						<div class="content">
+							<p>Crew Tab</p>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" id="tab-5" name="tab-group-2">
+						<label for="tab-5">SAFE HOUSE</label>
+						<div class="content">
+							<p>Safe House Tab</p>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" id="tab-6" name="tab-group-2">
+						<label for="tab-6">STATS</label>
+						<div class="content">
+							<p>Stats Tab</p>
+						</div> 
+					</div>
+				</div>
+			</div>
+			<div id="ControlWrapper">
+				<div id="NextDayDiv">
+					<div id="NDButtonDiv">
+						<script>
+							$( "#NDButtonDiv" ).click(function() {
+								DayNum += 1
+								$('#DateTimeText span').html(DayNum);
+								if(BTC_VAL < 20) {
+									var BTC_Mod = Math.floor((Math.random() * 40) -0);
+									BTC_VAL = BTC_VAL + BTC_Mod
+								} 
+								else {
+								var BTC_Mod = Math.floor((Math.random() * 40) -20);
+								BTC_VAL = BTC_VAL + BTC_Mod
+								}
+								$('#BTCText span').html(BTC_VAL);
+								$('#FundsText span').html(funds);
+							});
+						</script>
+						<input type="button" id="NDButton" value="NEXT DAY"style="width: 90%; height: 90%; font-size: 150%; font-family: 'Wendy One', sans-serif;">
+					</div>
+				</div> 
+			</div>
+		</div>
+	</BODY>
+</HTML>
+
